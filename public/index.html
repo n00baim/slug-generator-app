@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slug Generator - Create Your Personal Slug!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐌 Slug Generator</h1>
+            <p>Upload your photo and discover your slug twin!</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h3>Click to upload your photo</h3>
+                        <p>or drag and drop</p>
+                        <span class="file-types">PNG, JPG, JPEG (max 5MB)</span>
+                    </div>
+                    <img id="previewImage" class="preview-image" style="display: none;">
+                </div>
+                <button id="generateBtn" class="generate-btn" disabled>Generate My Slug!</button>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="spinner"></div>
+                <p id="loadingText">Analyzing your features...</p>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Your Slug Twin!</h2>
+                <div class="result-grid">
+                    <div class="image-card">
+                        <h3>Your Photo</h3>
+                        <img id="originalImage" alt="Original photo">
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="image-card">
+                        <h3>Your Slug</h3>
+                        <img id="slugImage" alt="Generated slug">
+                    </div>
+                </div>
+                <p id="slugDescription" class="slug-description"></p>
+                <button id="tryAgainBtn" class="try-again-btn">Try Another Photo</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Hugging Face AI | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
